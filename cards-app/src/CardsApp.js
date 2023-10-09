@@ -1,6 +1,5 @@
 import { LitElement, html, css } from 'lit';
 import "@lrnwebcomponents/meme-maker/meme-maker.js";
-import "jordan-card/src/jordan-card.js";
 
 
 export class CardsApp extends LitElement {
