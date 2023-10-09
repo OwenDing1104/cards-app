@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="Description" content="Put your description here.">
+  <base href="/">
+
+  <style>
+      .cards {
+        display:flex;
+      }
+
+      .card {
+        max-width: 400px;
+        margin: 10px;
+        background-color: pink;
+        text-align: center;
+        padding: 6px;
+        border-radius: 6px;
+      }
+
+      /* The heading setting in the card */
+      .card h1 {
+        font-size: 36px;
+        color: #CE1141;
+      }
+
+      /* The second heading setting in the card */
+      .card h2 {
+        font-size: 30px;
+        color: #CE1141;
+      }
+
+      /* The content setting in the card */
+      .card p {
+        font-size: 16px;
+        color: black;
+      }
+
+      .card img {
+        width: 85%;
+        height: auto;
+      }
+
+      /*The button setting in the card*/
+      .button1 {
+        margin: 24px auto;
+      }
+      .button1 button {
+        font-size: 20px;
+        color: #CE1141;
+        background-color: white;
+        padding: 4px;
+      }
+
+      .button1 button:hover, .button1 button:focus {
+        color: white;
+        background-color: #CE1141;
+      }
+
+      @media only screen and (min-width: 800px) {
+        #detail1 {
+          display:inline-block;
+        }
+      }
+
+      @media only screen and (max-width: 799px) {
+        #detail1 {
+          display: none;
+        }
+      }
+  </style>
+  <title>cards-app</title>
+</head>
+
+<body>
+  <cards-app></cards-app>
+
+  <script type="module" src="./src/cards-app.js"></script>
+</body>
+
+
+
+</html>
