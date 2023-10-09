@@ -3,7 +3,7 @@ import "@lrnwebcomponents/meme-maker/meme-maker.js";
 import "jordan-card/src/jordan-card.js";
 
 
-class CardsApp extends LitElement {
+export class CardsApp extends LitElement {
 
   static styles = css`
   :host {
