@@ -17,7 +17,7 @@
   },
   "dependencies": {
     "@lrnwebcomponents/meme-maker": "^7.0.18",
-    "jordan-card2": "1.0.0",
+    "jordan-card2": "^1.0.0",
     "lit": "^2.0.2"
   },
   "devDependencies": {
