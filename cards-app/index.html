@@ -77,9 +77,71 @@
 </head>
 
 <body>
-  <cards-app></cards-app>
+  <div class="cards">
+    <cards-app></cards-app>
+  </div>
 
   <script type="module" src="src/cards-app.js"></script>
+
+  <button id="cloneButton1">CloneCard</button>
+  <button id="color1">ColorCard</button>
+  <button id="heading1">ChangeHeading</button>
+  <button id="delete1">Delete</button>
+
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const cardsContainer = document.querySelector('.cards');
+        const jordanCard = document.querySelector('cards-app'); // This is the original card
+
+        function attachCardEventListeners(cardComponent) {
+            const card = cardComponent.shadowRoot.querySelector('.card');
+            card.addEventListener('mouseover', function() {
+                card.style.backgroundColor = 'yellow';
+            });
+            card.addEventListener('mouseout', function() {
+                card.style.backgroundColor = 'pink';
+            });
+        }
+
+    attachCardEventListeners(jordanCard);
+
+    document.querySelector('#cloneButton1').addEventListener('click', () => {
+        const cloneComponent = jordanCard.cloneNode(true);
+        cardsContainer.appendChild(cloneComponent);
+        attachCardEventListeners(cloneComponent);
+    });
+
+    document.querySelector('#color1').addEventListener('click', function() {
+        const card = jordanCard.shadowRoot.querySelector('.card');
+        if (card.style.backgroundColor === 'black') {
+            card.style.backgroundColor = 'purple';
+        } else {
+            card.style.backgroundColor = 'black';
+        }
+    });
+
+    document.querySelector('#heading1').addEventListener('click', function() {
+        const newHeading = prompt("New heading pls:");
+        if (newHeading) {
+            const cards = cardsContainer.querySelectorAll('cards-app');
+            cards.forEach(cardComponent => {
+                const heading = cardComponent.shadowRoot.querySelector('.card h1');
+                heading.textContent = newHeading;
+            });
+        }
+    });
+
+    document.querySelector('#delete1').addEventListener('click', function() {
+        const cards = cardsContainer.querySelectorAll('cards-app');
+        if (cards.length > 1) {
+            cardsContainer.removeChild(cards[cards.length - 1]);
+        }
+    });
+});
+
+</script>
+
 </body>
 
 </html>
